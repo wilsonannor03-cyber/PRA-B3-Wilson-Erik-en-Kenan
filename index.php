@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <title>Takenbord</title>
-    <link rel="stylesheet" href="public/css/main.css">
     <?php require_once 'resources/views/components/head.php'; ?>
+    <title>Takenbord</title>
 </head>
 <body>
-<header>
     <?php require_once 'resources/views/components/header.php'; ?>
-</header>
     <main>
         <div class="tasks-column">
             <h3>Moet gedaan worden</h3>

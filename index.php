@@ -3,9 +3,29 @@
 <head>
 	<meta charset="UTF-8">
     <title>Takenbord</title>
+    <link rel="stylesheet" href="public/css/main.css">
 </head>
 <body>
-    <header></header>
-    <main></main>
+    <header><img src="img/icon.png"><h1>Takenbord Developerland</h1><button id="login">Log in</button></header>
+    <main>
+        <div class="login-overlay">
+            <div class="login-popup">
+                <form id="login">
+                    <label for="username">Gebruikersnaam:</label>
+                    <input type="text" id="username">
+                    <br>
+                    <label for="password">Wachtwoord:</label>
+                    <input type="text" id="password">
+                    <br>
+                    <button type="submit">Log in</button>
+                </form>
+            </div>
+        </div>
+    </main>
     <footer></footer>
+    <script>
+        document.getElementById('login').addEventListener('click', function() {
+            document.getElementsByClassName('login-overlay')[0].style.display = 'flex';
+        })
+    </script>
 </body>

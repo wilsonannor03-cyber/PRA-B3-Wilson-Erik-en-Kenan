@@ -13,6 +13,7 @@
     <main>
         <div class="login-overlay">
             <div class="login-popup">
+                <button class="close-btn" id="close-login-menu">&times;</button>
                 <form id="login">
                     <label for="username">Gebruikersnaam:</label>
                     <input type="text" id="username">
@@ -29,6 +30,9 @@
     <script>
         document.getElementById('show-login-menu').addEventListener('click', function() {
             document.getElementsByClassName('login-overlay')[0].style.display = 'flex';
+        })
+            document.getElementById('close-login-menu').addEventListener('click', function() {
+            document.getElementsByClassName('login-overlay')[0].style.display = 'none';
         })
     </script>
 </body>

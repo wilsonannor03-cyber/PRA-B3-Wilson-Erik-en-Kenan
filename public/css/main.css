@@ -19,6 +19,7 @@ header {
     background-color: white;
     margin-right: 30px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 #show-login-menu:hover {
@@ -47,5 +48,19 @@ header {
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-align: center;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+form {
+    padding: 30px;
 }

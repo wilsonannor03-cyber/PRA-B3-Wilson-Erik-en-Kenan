@@ -1,3 +1,30 @@
+html {
+    background-color: #ffb8f3;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-title {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#show-login-menu {
+    padding: 10px;
+    height: fit-content;
+    background-color: white;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+#show-login-menu:hover {
+    background-color: lightgray;
+}
 .login-overlay {
     display: none;
     position: fixed;
@@ -12,7 +39,7 @@
 }
 
 .login-popup {
-    position: relative; /* make close-btn absolute relative to popup */
+    position: relative;
     background: #fff;
     padding: 20px;
     border-radius: 15px;

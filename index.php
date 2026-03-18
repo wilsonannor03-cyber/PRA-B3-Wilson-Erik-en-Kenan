@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="public/css/main.css">
 </head>
 <body>
-    <header><img src="img/icon.png"><h1>Takenbord Developerland</h1><button id="login">Log in</button></header>
+    <header>
+        <div class="page-title"><img src="img/icon.png"><h1>Takenbord Developerland</h1></div>
+        <button id="show-login-menu">Log in</button>
+    </header>
     <main>
         <div class="login-overlay">
             <div class="login-popup">
@@ -24,7 +27,7 @@
     </main>
     <footer></footer>
     <script>
-        document.getElementById('login').addEventListener('click', function() {
+        document.getElementById('show-login-menu').addEventListener('click', function() {
             document.getElementsByClassName('login-overlay')[0].style.display = 'flex';
         })
     </script>

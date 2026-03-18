@@ -7,13 +7,16 @@
 </head>
 <body>
 <header>
+    <?php require_once 'resources/views/components/header.php'; ?>
+</header>
+<main>
  <div class="container">
-        <h1>Nieuwe melding</h1>
+        <h1>Nieuwe taak</h1>
 
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
 
             <div class="form-group">
-                <label for="attractie">Naam attractie:</label>
+                <label for="attractie">Naam taak:</label>
                 <input type="text" name="attractie" id="attractie" class="form-input" required>
             </div>
 
@@ -57,5 +60,6 @@
 
         </form>
     </div>
+</main>
 </body>
 </html>

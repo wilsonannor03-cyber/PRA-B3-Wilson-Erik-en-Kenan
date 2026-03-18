@@ -7,7 +7,9 @@
     <?php require_once 'resources/views/components/head.php'; ?>
 </head>
 <body>
-<?php require_once 'resources/views/components/header.php'; ?>
+<header>
+    <?php require_once 'resources/views/components/header.php'; ?>
+</header>
     <main>
         <div class="login-overlay">
             <div class="login-popup">

@@ -4,12 +4,10 @@
 	<meta charset="UTF-8">
     <title>Takenbord</title>
     <link rel="stylesheet" href="public/css/main.css">
+    <?php require_once 'resources/views/components/head.php'; ?>
 </head>
 <body>
-    <header>
-        <div class="page-title"><img src="img/icon.png"><h1>Takenbord Developerland</h1></div>
-        <button id="show-login-menu">Log in</button>
-    </header>
+<?php require_once 'resources/views/components/header.php'; ?>
     <main>
         <div class="login-overlay">
             <div class="login-popup">

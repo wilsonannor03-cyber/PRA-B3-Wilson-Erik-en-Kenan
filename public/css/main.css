@@ -13,12 +13,18 @@ header {
     align-items: center;
 }
 
+main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .tasks-column {
     background-color: rgb(255, 255, 134);
     width: 30%;
     border-radius: 10px;
     text-align: center;
     height: 60vh;
+    margin: auto 10px;
 }
 
 .tasks {

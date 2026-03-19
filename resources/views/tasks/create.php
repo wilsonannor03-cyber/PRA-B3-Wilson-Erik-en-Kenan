@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php require_once '../components/head.php'; ?>
 </head>
 <body>
 <header>
-    <?php require_once 'resources/views/components/header.php'; ?>
+    <?php require_once '../components/header.php'; ?>
 </header>
 <main>
  <div class="container">
+
         <h1>Nieuwe taak</h1>
 
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/taskController.php" method="POST">

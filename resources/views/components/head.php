@@ -1,2 +1,2 @@
 	<meta charset="UTF-8">
-    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="../../public/css/main.css">

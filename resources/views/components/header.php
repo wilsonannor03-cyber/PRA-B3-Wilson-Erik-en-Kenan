@@ -1,5 +1,5 @@
 <header>
-        <div class="page-title"><img src="../../img/icon.png"><h1>Takenbord Developerland</h1></div>
+        <div class="page-title"><img src="img/icon.png"><h1>Takenbord Developerland</h1></div>
         <button id="show-login-menu">Log in</button>
         <div class="Nieuwe-taak" style="display: none;">
             <a href="Nieuwe taak">Nieuwe taak</a>

@@ -95,3 +95,29 @@ h3 {
 form {
     padding: 30px;
 }
+
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-group{
+    margin: 1rem 0;
+}
+
+label{
+    cursor: pointer;
+    display: inline-block;
+    min-width: 140px;
+    vertical-align: top;
+}
+
+.form-input{
+    width: 600px;
+}

@@ -16,24 +16,23 @@
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/taskController.php" method="POST">
 
             <div class="form-group">
-                <label for="attractie">Naam taak:</label>
-                <input type="text" name="attractie" id="attractie" class="form-input" required>
-            </div>
-
-  
-            <div class="form-group">
-                <label for="attractie">Categorie</label>
-                <input type="text" name="attractie" id="attractie" class="form-input" required>
+                <label for="taakNaam">Naam taak:</label>
+                <input type="text" name="taakNaam" id="taakNaam" class="form-input" required>
             </div>
 
             <div class="form-group">
-                <label for="attractie">Medewerker</label>
-                <input type="text" name="attractie" id="attractie" class="form-input" required>
+                <label for="categorie">Categorie</label>
+                <input type="text" name="categorie" id="categorie" class="form-input" required>
             </div>
 
             <div class="form-group">
-                <label for="overige_info"></label>
-                <textarea name="overige_info" id="overige_info" rows="4" class="form-input"></textarea>
+                <label for="medewerker">Medewerker</label>
+                <input type="text" name="medewerker" id="medewerker" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="overigeInfo">Overige info</label>
+                <textarea name="overigeInfo" id="overigeInfo" rows="4" class="form-input"></textarea>
             </div>
 
             <input type="submit" value="Verstuur melding">

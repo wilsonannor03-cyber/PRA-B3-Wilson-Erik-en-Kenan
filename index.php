@@ -36,8 +36,8 @@
         </div>
 
 
-        <div class="login-overlay">
-            <div class="login-popup">
+        <div class="overlay" id="login-overlay">
+            <div class="popup">
                 <button class="close-btn" id="close-login-menu">&times;</button>
                 <form id="login">
                     <label for="username">Gebruikersnaam:</label>
@@ -46,18 +46,45 @@
                     <label for="password">Wachtwoord:</label>
                     <input type="text" id="password">
                     <br>
-                    <button type="submit">Log in</button>
+                    <button type="submit" id="login">Log in</button>
                 </form>
             </div>
         </div>
     </main>
     <footer></footer>
     <script>
+        if (localStorage.getItem('loggedIn') == "true") {
+            showLoggedIn();
+        };
+
         document.getElementById('show-login-menu').addEventListener('click', function() {
-            document.getElementsByClassName('login-overlay')[0].style.display = 'flex';
-        })
-            document.getElementById('close-login-menu').addEventListener('click', function() {
-            document.getElementsByClassName('login-overlay')[0].style.display = 'none';
-        })
+            if (localStorage.getItem('loggedIn') == "true") {
+                if (confirm('Weet je zeker dat je uit wil loggen?')) {
+                    localStorage.setItem("loggedIn","false");
+                    window.location.reload();
+                }
+            }
+            else {
+                document.getElementById('login-overlay').style.display = 'flex';
+            }
+        });
+
+        document.getElementById('close-login-menu').addEventListener('click', function() {
+            document.getElementById('login-overlay').style.display = 'none';
+        });
+
+        document.getElementById('login').addEventListener('click', function() {
+            event.preventDefault()
+            localStorage.setItem("loggedIn","true")
+            showLoggedIn();
+        });
+        
+        function showLoggedIn() {
+            document.getElementsByClassName('tasks-column')[0].style.display = 'inline';
+            document.getElementsByClassName('tasks-column')[1].style.display = 'inline';
+            document.getElementsByClassName('tasks-column')[2].style.display = 'inline';
+            document.getElementsByClassName('tasks-column')[3].style.display = 'inline';
+            document.getElementById('show-login-menu').textContent = 'Log Uit'
+        }
     </script>
 </body>

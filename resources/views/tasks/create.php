@@ -11,6 +11,7 @@
      <?php require_once __DIR__.'/../components/header.php'; ?>
 
 <main>
+
  <div class="container">
         <h1>Nieuwe taak</h1>
 
@@ -25,13 +26,25 @@
                 <input type="text" name="medewerker" id="medewerker" class="form-input" required>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="display:flex; align-items:flex-start; gap:10px;">
+                <label for="beschrijving" style="min-width:120px;">Beschrijving</label>
+                <textarea name="beschrijving" id="beschrijving" rows="4" class="form-input">
+                    <?= htmlspecialchars($_POST['beschrijving'] ?? '') ?>
+                </textarea>
+            </div>
+
+                <div class="form-group">
                 <label for="deadline">Deadline</label>
                 <input type="date" name="deadline" id="deadline" class="form-input" required>
             </div>
 
             <input type="submit" value="Taak toevoegen">
         </form>
+            <?php
+                if(isset($_GET['bericht'])){
+                    echo '<div class="bericht">'.htmlspecialchars($_GET['bericht']).'</div>';
+                }
+            ?>
     </div>
    
 </main>

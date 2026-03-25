@@ -1,57 +1,28 @@
 <?php
-require_once '../config/conn.php'; // database connectie
+$categorie = $_POST['categorie'] ?? '';
+$medewerker = $_POST['medewerker'] ?? '';
+$beschrijving = $_POST['medewerker'] ?? '';
+$deadline = $_POST['deadline'] ?? '';
 
-$action = $_POST['action'] ?? '';
-
-if ($action === 'update') {
-
-    // waarden uit formulier halen
-    $id = $_POST['id'];
-    $title = trim($_POST['title']);
-    $content = trim($_POST['content']);
-
-    // controleren of velden leeg zijn
-    if (empty($title) || empty($content)) {
-        die("Vul zowel een titel als content in.");
-    }
-
-    // query maken
-    $query = "UPDATE berichten SET title = :title, content = :content WHERE id = :id";
-
-    // statement voorbereiden
-    $stmt = $conn->prepare($query);
-
-    // query uitvoeren
-    $stmt->execute([
-        ':title' => $title,
-        ':content' => $content,
-        ':id' => $id
-    ]);
-
-    // terug naar homepage
-    header("Location: ../index.php");
+if (empty($categorie) || empty($medewerker) || empty($beschrijving) || empty($deadline)) {
+    header("Location: ../../../resources/views/tasks/create.php?error=Vul alle verplichte velden in");
     exit;
 }
 
+require_once __DIR__ . '/../../../config/conn.php';
 
-if ($action === 'delete') {
+$query = "INSERT INTO takenlijst (categorie, medewerker, beschrijving, deadline)
+          VALUES (:categorie, :medewerker, :beschrijving, :deadline)";
 
-    // id ophalen
-    $id = $_POST['id'];
+$statement = $conn->prepare($query);
+$statement->execute([
+    ":categorie" => $categorie,
+    ":medewerker" => $medewerker,
+    ":beschrijving" => $beschrijving,
+    ":deadline" => $deadline
+]);
+$msg = "Uw nieuwe taak is toegevoegt! U kunt nu terug naar de home pagina";
+header("location: ../../../resources/views/tasks/create.php?bericht=$msg");
 
-    // delete query
-    $query = "DELETE FROM berichten WHERE id = :id";
-
-    // statement voorbereiden
-    $stmt = $conn->prepare($query);
-
-    // uitvoeren
-    $stmt->execute([
-        ':id' => $id
-    ]);
-
-    // terug naar homepage
-    header("Location: ../index.php");
-    exit;
-}
+exit;
 ?>

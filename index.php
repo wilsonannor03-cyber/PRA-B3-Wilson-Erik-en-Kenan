@@ -15,7 +15,7 @@
             <h3>Moet gedaan worden</h3>
 
             <button class="task-btn" onclick="window.location.href='bewerken.php?status=todo'">
-                + Taak toevoegen
+                Bewerken
             </button>
 
             <div class="tasks">
@@ -27,7 +27,7 @@
             <h3>Bezig</h3>
 
             <button class="task-btn" onclick="window.location.href='bewerken.php?status=bezig'">
-                + Taak toevoegen
+                Berwerken
             </button>
 
             <div class="tasks">
@@ -39,7 +39,7 @@
             <h3>Moet gecontroleerd worden</h3>
 
             <button class="task-btn" onclick="window.location.href='bewerken.php?status=check'">
-                + Taak toevoegen
+                Berwerken
             </button>
 
             <div class="tasks">
@@ -51,7 +51,7 @@
             <h3>Klaar</h3>
 
             <button class="task-btn" onclick="window.location.href='bewerken.php?status=klaar'">
-                + Taak toevoegen
+                Berwerken
             </button>
 
             <div class="tasks">

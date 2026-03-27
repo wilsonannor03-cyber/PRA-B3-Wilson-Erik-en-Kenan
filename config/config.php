@@ -12,7 +12,7 @@ $dbUser = 'root';
 $dbPass = '';
 
 //De url waarop jouw project staat. Géén slash aan het einde.
-$base_url = 'http://localhost/B3%20PRA%20project/PRA%20B3%20Wilson,%20Eric%20en%20Kenan/index.php';
+$base_url = 'http://praopdracht.test/PRA-B3-Wilson-Erik-en-Kenan/';
 
 try {
     $conn = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8", $dbUser, $dbPass);

@@ -6,12 +6,14 @@
 </head>
 <body>
     <?php require_once 'resources/views/components/header.php'; ?>
+_____________________________________________________________________________
     <main>
         <div class="tasks-column">
             <h3>Moet gedaan worden</h3>
             <div class="tasks">
                 <?php include('placeholdertasks.php');?>
             </div>
+
         </div>
 
         <div class="tasks-column">

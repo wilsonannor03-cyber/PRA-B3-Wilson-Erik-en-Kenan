@@ -53,7 +53,20 @@ h3 {
     border-radius: 10px;
     cursor: pointer;
 }
+.task-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
 
+.task-btn:hover {
+    background-color: darkred;
+}
 #show-login-menu:hover {
     background-color: lightgray;
 }

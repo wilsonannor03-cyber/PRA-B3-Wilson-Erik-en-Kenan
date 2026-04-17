@@ -1,3 +1,4 @@
+/* Algemeen */
 html {
     background-color: #ffb8f3;
 }
@@ -8,43 +9,64 @@ header {
     justify-content: space-between;
 }
 
-.page-title {
-    display: flex;
-    align-items: center;
-}
-
 main {
     display: flex;
     justify-content: space-evenly;
+    margin: 20px 0;
 }
 
+/* Takenkolommen */
 .tasks-column {
     background-color: rgb(255, 255, 134);
-    width: 30%;
+    width: 22%;
     border-radius: 10px;
     text-align: center;
     height: 60vh;
-    margin: auto 10px;
-    display: none;
+    display: none;          /* Wordt zichtbaar na login */
+    flex-direction: column;
 }
 
 .tasks {
-    overflow-y: auto;
-    height: 80%;
+    overflow-y: auto;       /* Scrollbare takenlijst */
+    flex-grow: 1;
+    margin: 0 10px;
 }
 
 h3 {
-    padding: 10%;
-    height: 0;
+    padding: 10px 0;
     margin: 0;
 }
 
 .task {
     background-color: greenyellow;
-    margin: 10px;
+    margin: 10px 0;
     border-radius: 10px;
+    padding: 5px;
 }
 
+/* Bewerken-knop */
+.task-btn {
+    margin: 10px;
+    align-self: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 5px;               /* Ruimte tussen icon en tekst */
+}
+
+.task-btn:hover {
+    background-color: lightgray;
+}
+
+.icon-pencil {
+    font-size: 18px;        /* Grootte pencil icon */
+}
+
+/* Login overlay */
 #show-login-menu {
     padding: 10px;
     height: fit-content;
@@ -53,23 +75,11 @@ h3 {
     border-radius: 10px;
     cursor: pointer;
 }
-.task-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 10px 0;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-}
 
-.task-btn:hover {
-    background-color: darkred;
-}
 #show-login-menu:hover {
     background-color: lightgray;
 }
+
 .overlay {
     display: none;
     position: fixed;
@@ -135,5 +145,4 @@ label{
 .form-input{
     width: 600px;
     align-items: center;
-}
-
+}   

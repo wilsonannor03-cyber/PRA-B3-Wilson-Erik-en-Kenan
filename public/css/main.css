@@ -114,6 +114,8 @@ main {
     text-align: left;
 
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    
+    padding-bottom: 15px;
 
 }
  
@@ -420,5 +422,80 @@ header .container {
 }
 
 .add-column-btn:hover {
+    background-color: darkgreen;
+}
+
+.editBtn {
+    background-color: rgb(0, 204, 204);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.editBtn:hover {
+    background-color: darkcyan;
+}
+
+.deleteBtn {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.deleteBtn:hover {
+    background-color: darkred;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+form[action="update.php"] {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+form[action="update.php"] label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form[action="update.php"] input[type="text"],
+form[action="update.php"] input[type="date"],
+form[action="update.php"] select {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form[action="update.php"] button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form[action="update.php"] button:hover {
     background-color: darkgreen;
 }

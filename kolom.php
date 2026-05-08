@@ -37,32 +37,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="public/css/main.css">
 </head>
 <body>
- 
-<div class="container">
- 
-    <h1>Nieuwe kolom toevoegen</h1>
- 
-    <?php if (isset($_GET['success'])): ?>
-        <p style="color:green;">Kolom succesvol toegevoegd!</p>
-    <?php endif; ?>
- 
-    <?php if (!empty($melding)): ?>
-        <p style="color:red;"><?= htmlspecialchars($melding) ?></p>
-    <?php endif; ?>
- 
-    <form method="POST">
- 
-        <div class="form-group">
-            <label>Kolomnaam:</label>
-            <input type="text" name="kolomnaam" required class="form-input">
+    <?php require_once 'resources/views/components/header.php'; ?>
+
+    <main> 
+        <div class="container">
+        
+            <h1>Nieuwe kolom toevoegen</h1>
+        
+            <?php if (isset($_GET['success'])): ?>
+                <p style="color:green;">Kolom succesvol toegevoegd!</p>
+            <?php endif; ?>
+        
+            <?php if (!empty($melding)): ?>
+                <p style="color:red;"><?= htmlspecialchars($melding) ?></p>
+            <?php endif; ?>
+        
+            <form method="POST">
+        
+                <div class="form-group">
+                    <label>Kolomnaam:</label>
+                    <input type="text" name="kolomnaam" required class="form-input">
+                </div>
+
+                <button type="submit" class="add-column-btn">Toevoegen</button>
+
+            </form>
+        <a href="index.php" class="home-button">Terug naar homepagina</a>
         </div>
-
-        <button type="submit" class="add-column-btn">Toevoegen</button>
-
-    </form>
- <a href="index.php" class="home-button">Terug naar homepagina</a>
-</div>
- 
+    </main>
 </body>
 </html>
  

@@ -52,10 +52,10 @@ function toonTakenPerKolom($taken, $kolom_id) {
             echo "<small>Afdeling: " . htmlspecialchars($taak['afdeling']) . "</small>";
  
             echo "<br><br>";
- 
-            echo "<a href='bewerken.php?id=" . $taak['ID'] . "'>✏️ Bewerken</a>";
+
+            echo "<a class='editBtn' href='bewerken.php?id=" . $taak['ID'] . "'>✏️ Bewerken</a>";
             echo " | ";
-            echo "<a href='delete.php?id=" . $taak['ID'] . "' 
+            echo "<a class='deleteBtn' href='delete.php?id=" . $taak['ID'] . "' 
                 onclick='return confirm(\"Weet je zeker dat je deze taak wilt verwijderen?\")'>
                 🗑 Verwijderen
                 </a>"; 

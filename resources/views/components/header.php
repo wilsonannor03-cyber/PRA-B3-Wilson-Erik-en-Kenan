@@ -11,7 +11,7 @@
         <a href="<?php echo $base_url; ?>/inloggen.php">
             <button id="login-btn">Log in</button>
         </a>
-        <a href="<?php echo $base_url; ?>resources/views/tasks/create.php" class="create-link">
+        <a href="<?php echo $base_url; ?>/resources/views/tasks/create.php" class="create-link">
             + Nieuwe taak
         </a>
     </div>

@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once 'config/config.php';
  
 if (!isset($_SESSION['user_id'])) {
     die("Je moet ingelogd zijn.");

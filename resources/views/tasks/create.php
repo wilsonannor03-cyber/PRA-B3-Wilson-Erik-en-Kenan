@@ -12,53 +12,80 @@
  
 <?php require_once __DIR__.'/../components/header.php'; ?>
  
+<?php
+require_once '../../../config/config.php';
+ 
+$kolommenStmt = $conn->query("SELECT * FROM kolom");
+$kolommen = $kolommenStmt->fetchAll();
+?>
+ 
 <main>
-    <div class="container">
-        <h1>Nieuwe taak</h1>
+<div class="container">
  
-        <form action="<?php echo $base_url; ?>/app/Http/Controllers/taskController.php" method="POST">
+    <h1>Nieuwe taak</h1>
  
-            <div class="form-group">
-                <label for="categorie">Categorie</label>
-                <input type="text" name="categorie" id="categorie" class="form-input" required>
-            </div>
+    <form action="<?php echo $base_url; ?>/../app/Http/Controllers/taskController.php" method="POST">
  
-            <div class="form-group">
-                <label for="medewerker">Medewerker</label>
-                <input type="text" name="medewerker" id="medewerker" class="form-input" required>
-            </div>
+        <div class="form-group">
+            <label>Categorie</label>
+            <input type="text" name="categorie" class="form-input" required>
+        </div>
  
-            <div class="form-group">
-                <label for="beschrijving">Beschrijving</label>
-                <textarea name="beschrijving" id="beschrijving" rows="4" class="form-input" required></textarea>
-            </div>
+        <div class="form-group">
+            <label>Medewerker</label>
+            <input type="text" name="medewerker" class="form-input" required>
+        </div>
  
-            <div class="form-group">
-                <label for="deadline">Deadline</label>
-                <input type="date" name="deadline" id="deadline" class="form-input" required>
-            </div>
+        <div class="form-group">
+            <label>Afdeling</label>
+            <input type="text" name="afdeling" class="form-input" required>
+        </div>
  
-            <div class="form-group">
-                <label for="status">Status</label>
-                <select name="status" id="status" class="form-input">
-                    <option value="todo">Moet gedaan worden</option>
-                    <option value="bezig">Bezig</option>
-                    <option value="check">Controle</option>
-                    <option value="klaar">Klaar</option>
-                </select>
-            </div>
+        <div class="form-group">
+            <label>Kolom</label>
+            <select name="kolom_id" class="form-input" required>
+                <option value="">-- Kies kolom --</option>
  
-            <input type="submit" value="Taak toevoegen">
+                <?php foreach ($kolommen as $kolom): ?>
+                    <option value="<?= $kolom['ID'] ?>">
+                        <?= htmlspecialchars($kolom['kolomnaam']) ?>
+                    </option>
+                <?php endforeach; ?>
  
-        </form>
+            </select>
+        </div>
  
-        <?php
-        if(isset($_GET['bericht'])){
-            echo '<div class="bericht">'.htmlspecialchars($_GET['bericht']).'</div>';
-        }
-        ?>
-    </div>
+        <div class="form-group">
+            <label>Beschrijving</label>
+            <textarea name="beschrijving" rows="4" class="form-input" required></textarea>
+        </div>
+ 
+        <div class="form-group">
+            <label>Deadline</label>
+            <input type="date" name="deadline" class="form-input" required>
+        </div>
+ 
+        <div class="form-group">
+            <label>Status</label>
+            <select name="status" class="form-input">
+                <option value="todo">Moet gedaan worden</option>
+                <option value="bezig">Bezig</option>
+                <option value="check">Controle</option>
+                <option value="klaar">Klaar</option>
+            </select>
+        </div>
+ 
+        <input type="submit" value="Taak toevoegen">
+ 
+    </form>
+<a href="../../../index.php" class="home-button">Terug naar homepagina</a> 
+    <?php if(isset($_GET['bericht'])): ?>
+        <div class="bericht"><?= htmlspecialchars($_GET['bericht']) ?></div>
+    <?php endif; ?>
+ 
+</div>
 </main>
  
 </body>
 </html>
+ 

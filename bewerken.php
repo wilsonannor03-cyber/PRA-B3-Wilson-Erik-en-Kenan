@@ -1,10 +1,11 @@
 <?php
+session_start();
 require_once 'config/config.php';
  
 if (!isset($_SESSION['user_id'])) {
     die("Je moet ingelogd zijn.");
 }
- 
+
 $id = $_GET['id'] ?? null;
  
 if (!$id) {

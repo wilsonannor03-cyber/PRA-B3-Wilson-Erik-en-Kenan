@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Kolomnaam:</label>
             <input type="text" name="kolomnaam" required class="form-input">
         </div>
- 
-        <button type="submit">Toevoegen</button>
- 
+
+        <button type="submit" class="add-column-btn">Toevoegen</button>
+
     </form>
  <a href="index.php" class="home-button">Terug naar homepagina</a>
 </div>

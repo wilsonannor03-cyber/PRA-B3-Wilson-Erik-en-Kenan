@@ -76,11 +76,10 @@ function toonTakenPerKolom($taken, $kolom_id) {
 </head>
  
 <body>
-<?php require_once 'resources/views/components/header.php'; ?>
-<a href="kolom.php" class="new-column-btn">+ Nieuwe kolom</a>
-<main>
- 
-    <form method="GET" style="margin: 20px; display:flex; gap:20px;">
+    <?php require_once 'resources/views/components/header.php'; ?>
+    <main>
+        
+        <form method="GET" style="margin: 20px; display:flex; gap:20px;">
  
         <div>
             <label>Status: </label>
@@ -105,9 +104,11 @@ function toonTakenPerKolom($taken, $kolom_id) {
                 ?>
             </select>
         </div>
+        <a href="kolom.php" class="new-column-btn">+ Nieuwe kolom</a>
  
     </form>
- 
+    
+    <div class="columns">
     <?php foreach ($kolommen as $kolom): ?>
         <div class="tasks-column" style="display:flex;">
  
@@ -119,6 +120,7 @@ function toonTakenPerKolom($taken, $kolom_id) {
  
         </div>
     <?php endforeach; ?>
+    </div>
  
 </main>
  

@@ -456,3 +456,46 @@ header .container {
 .deleteBtn:hover {
     background-color: darkred;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+form[action="update.php"] {
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+form[action="update.php"] label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+form[action="update.php"] input[type="text"],
+form[action="update.php"] input[type="date"],
+form[action="update.php"] select {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form[action="update.php"] button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form[action="update.php"] button:hover {
+    background-color: darkgreen;
+}

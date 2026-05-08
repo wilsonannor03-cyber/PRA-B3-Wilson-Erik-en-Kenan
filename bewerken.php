@@ -32,12 +32,12 @@ if (!$taak) {
     <?php require_once 'resources/views/components/head.php'; ?>
 </head>
 <body>
- 
+<?php require_once 'resources/views/components/header.php'; ?>
 <h1>Taak bewerken</h1>
  
 <form method="POST" action="update.php">
  
-    <input type="hidden" name="id" value="<?= $taak['ID'] ?>">>
+    <input type="hidden" name="id" value="<?= $taak['ID'] ?>">
  
     <label>Beschrijving</label>
     <input type="text" name="beschrijving" value="<?= htmlspecialchars($taak['beschrijving']) ?>">
@@ -49,7 +49,10 @@ if (!$taak) {
         <option value="check" <?= $taak['status'] == 'check' ? 'selected' : '' ?>>Check</option>
         <option value="klaar" <?= $taak['status'] == 'klaar' ? 'selected' : '' ?>>Klaar</option>
     </select>
- 
+
+    <label>Afdeling</label>
+    <input type="text" name="afdeling" value="<?= htmlspecialchars($taak['afdeling']) ?>">
+
     <label>Deadline</label>
     <input type="date" name="deadline" value="<?= $taak['deadline'] ?>">
  

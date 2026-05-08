@@ -3,8 +3,12 @@
  
 <header class="site-header">
     <div class="page-title">
-        <img src="<?php echo $base_url; ?>/img/icon.png">
-        <h1>Takenbord Developerland</h1>
+        <a href="<?php echo $base_url; ?>/index.php">
+            <img src="<?php echo $base_url; ?>/img/icon.png">
+        </a>
+        <a href="<?php echo $base_url; ?>/index.php">
+            <h1>Takenbord Developerland</h1>
+        </a>
     </div>
     <div class="header-actions">
  

@@ -1,6 +1,6 @@
 <?php
+session_start();
 require_once 'config/config.php';
- 
 if (!isset($_SESSION['user_id'])) {
     die("Je moet ingelogd zijn.");
 }
@@ -11,16 +11,15 @@ if (!$id) {
     die("Geen taak gekozen.");
 }
  
- 
-$query = "SELECT * FROM takenlijst WHERE id = :id AND user_id = :user_id";
+ $query = "SELECT * FROM takenlijst WHERE id = :id AND user_id = :user_id";
 $stmt = $conn->prepare($query);
 $stmt->execute([
     ':id' => $id,
     ':user_id' => $_SESSION['user_id']
 ]);
  
-$taak = $stmt->fetch();
- 
+$taak = $stmt->fetch(PDO::FETCH_ASSOC);
+
 if (!$taak) {
     die("Taak niet gevonden.");
 }
@@ -38,7 +37,7 @@ if (!$taak) {
  
 <form method="POST" action="update.php">
  
-    <input type="hidden" name="id" value="<?= $taak['id'] ?>">
+    <input type="hidden" name="id" value="<?= $taak['ID'] ?>">>
  
     <label>Beschrijving</label>
     <input type="text" name="beschrijving" value="<?= htmlspecialchars($taak['beschrijving']) ?>">

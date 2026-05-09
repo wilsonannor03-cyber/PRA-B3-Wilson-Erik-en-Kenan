@@ -53,11 +53,11 @@ function toonTakenPerKolom($taken, $kolom_id) {
  
             echo "<br><br>";
 
-            echo "<a class='editBtn' href='bewerken.php?id=" . $taak['ID'] . "'>✏️ Bewerken</a>";
+            echo "<a class='editBtn' href='bewerken.php?id=" . $taak['ID'] . "'>✏️&nbsp;Bewerken</a>";
             echo " | ";
             echo "<a class='deleteBtn' href='delete.php?id=" . $taak['ID'] . "' 
                 onclick='return confirm(\"Weet je zeker dat je deze taak wilt verwijderen?\")'>
-                🗑 Verwijderen
+                🗑&nbsp;Verwijderen
                 </a>"; 
             echo "</div>";
         }

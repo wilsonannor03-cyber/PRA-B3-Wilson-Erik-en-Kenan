@@ -14,13 +14,13 @@ $id = $_POST['id'] ?? null;
 
 $beschrijving = $_POST['beschrijving'] ?? '';
 
-$status = $_POST['status'] ?? '';
+$kolom_id = $_POST['kolom_id'] ?? '';
 
 $deadline = $_POST['deadline'] ?? '';
 
 $afdeling = $_POST['afdeling'] ?? '';
  
-if (!$id || empty($beschrijving) || empty($status) || empty($deadline) || empty($afdeling)) {
+if (!$id || empty($beschrijving) || empty($kolom_id) || empty($deadline) || empty($afdeling)) {
 
     die("Niet alle velden zijn ingevuld.");
 
@@ -30,7 +30,7 @@ $query = "UPDATE takenlijst
 
           SET beschrijving = :beschrijving,
 
-              status = :status,
+              kolom_id = :kolom_id,
 
               deadline = :deadline,
 
@@ -46,7 +46,7 @@ $stmt->execute([
 
     ':beschrijving' => $beschrijving,
 
-    ':status' => $status,
+    ':kolom_id' => $kolom_id,
 
     ':deadline' => $deadline,
 

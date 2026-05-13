@@ -43,11 +43,11 @@ if (!$taak) {
     <input type="text" name="beschrijving" value="<?= htmlspecialchars($taak['beschrijving']) ?>">
  
     <label>Status</label>
-    <select name="status">
-        <option value="todo" <?= $taak['status'] == 'todo' ? 'selected' : '' ?>>Todo</option>
-        <option value="bezig" <?= $taak['status'] == 'bezig' ? 'selected' : '' ?>>Bezig</option>
-        <option value="check" <?= $taak['status'] == 'check' ? 'selected' : '' ?>>Check</option>
-        <option value="klaar" <?= $taak['status'] == 'klaar' ? 'selected' : '' ?>>Klaar</option>
+    <select name="kolom_id">
+        <option value="2" <?= $taak['kolom_id'] == '2' ? 'selected' : '' ?>>Moet Gedaan Worden</option>
+        <option value="3" <?= $taak['kolom_id'] == '3' ? 'selected' : '' ?>>Bezig</option>
+        <option value="4" <?= $taak['kolom_id'] == '4' ? 'selected' : '' ?>>Controle</option>
+        <option value="5" <?= $taak['kolom_id'] == '5' ? 'selected' : '' ?>>Klaar</option>
     </select>
 
     <label>Afdeling</label>

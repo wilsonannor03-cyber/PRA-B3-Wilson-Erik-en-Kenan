@@ -53,8 +53,7 @@ function toonTakenPerKolom($taken, $kolom_id) {
             echo "<small>Deadline: " . $taak['deadline'] . "</small><br>";
             echo "<small>Afdeling: " . htmlspecialchars($taak['afdeling']) . "</small>";
             echo "<br><br>";
-
-            echo "<a class='editBtn' href='bewerken.php?id=" . $taak['ID'] . "'>✏️ Bewerken</a>";
+            echo "<a class='editBtn' href='bewerken.php?id=" . $taak['ID'] . "'>✏️&nbsp;Bewerken</a>";
             echo " | ";
             echo "<a class='deleteBtn' href='delete.php?id=" . $taak['ID'] . "' 
                 onclick='return confirm(\"Weet je zeker dat je deze taak wilt verwijderen?\")'>
@@ -104,7 +103,7 @@ function toonTakenPerKolom($taken, $kolom_id) {
             </div>
             <a href="kolom.php" class="new-column-btn">+ Nieuwe kolom</a>
         </form>
-        
+        <div class="columns">
         <?php foreach ($kolommen as $kolom): ?>
             <?php
             if (isset($_SESSION['hidden_columns']) &&
@@ -112,18 +111,19 @@ function toonTakenPerKolom($taken, $kolom_id) {
                 continue;
             }
             ?>
+
             <div class="tasks-column" style="display:flex;">
                 <h3>
                     <?= htmlspecialchars($kolom['kolomnaam']) ?>
                     <br>
-                    <a href="?hide=<?= $kolom['ID'] ?>">Verbergen</a>
+
                 </h3>
                 <div class="tasks">
                     <?php toonTakenPerKolom($taken, $kolom['ID']); ?>
                 </div>
             </div>
         <?php endforeach; ?>
-
+        </div>
     </main>
 </body>
 </html>
